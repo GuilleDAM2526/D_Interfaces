@@ -1,0 +1,33 @@
+1 proyecto vs = 1 assembly (ensamblado) compilado >>.exe y .dll
+1 solucion (.sln) >> varios proyectos
+1 namespace
+
+protected internal: es mas bien protected ó internal, dos cosas a la vez. no restringe, aumenta
+
+en java esta el garbage Colector; en c# se usa el Finalize() para acabar un proceso
+
+Proyecto y ensamblado: normalmente, al compilar un proyecto de C#, se genera un ensamblado: un .exe o un .dll.
+No son exactamente lo mismo: el proyecto es la configuración y el código fuente; el ensamblado es el resultado compilado.
+Hay excepciones según el tipo de proyecto.
+
+Solución (.sln): agrupa uno o varios proyectos.
+
+Namespace (espacio de nombres): organiza y distingue tipos.No tiene por qué corresponder a un proyecto o ensamblado;
+un mismo namespace puede abarcar varios ensamblados, y un ensamblado puede contener varios namespaces.
+
+protected internal: combina dos permisos: se puede acceder al miembro desde el mismo ensamblado (internal) o desde una clase derivada,
+incluso si está en otro ensamblado (protected). Es una alternativa entre ambas condiciones, no una intersección;
+por eso permite más acceso que cada modificador por separado.
+
+Garbage collector y Finalize(): tanto Java como C# tienen recolector de basura.
+En C#, Finalize() no sirve para “acabar un proceso” ni garantiza cuándo se ejecutará; es un finalizador que el GC puede llamar antes de liberar un objeto.
+Para liberar recursos de forma determinista, se suele usar IDisposable y using. Los finalizadores están desaconsejados en la mayoría de los casos.
+
+Deconstruct: recoje en una dupla las propiedades de un objeto
+
+Refactorización de encapsulamiento de un campo:
+
+
+la sobreescritura de los métodos de una clase abstracta en el hijo requieren abstract: Un método abstract es un método declarado sin código en la clase base. Indica que las clases hijas deben proporcionar su propia versión usando override.
+
+En pocas palabras: abstract obliga a las clases hijas a implementar el método; override es cómo lo implementan.
